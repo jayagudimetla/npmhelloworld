@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerryni/npmhelloworld.git"
+  },
   "author": "jerryni <jerryni2014@gmail.com>",
   "license": "ISC"
 }
