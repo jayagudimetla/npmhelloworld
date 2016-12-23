@@ -1,6 +1,6 @@
 {
   "name": "npmhelloworld",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hello world",
   "main": "index.js",
   "scripts": {
