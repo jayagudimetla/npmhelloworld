@@ -4,7 +4,7 @@
   "description": "This is for npm test;",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js",
+    "test": "node ./node_modules/.bin/istanbul cover node test.js",
     "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
@@ -14,6 +14,7 @@
   "author": "jerryni <jerryni2014@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "coveralls": "^2.11.16"
+    "coveralls": "^2.11.16",
+    "istanbul": "^0.4.5"
   }
 }
