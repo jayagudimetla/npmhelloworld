@@ -4,12 +4,16 @@
   "description": "This is for npm test;",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jerryni/npmhelloworld.git"
   },
   "author": "jerryni <jerryni2014@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "coveralls": "^2.11.16"
+  }
 }
