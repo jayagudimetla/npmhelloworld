@@ -4,7 +4,7 @@
   "description": "This is for npm test;",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/istanbul cover node test.js",
+    "test": "node ./node_modules/.bin/istanbul cover test.js",
     "coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
