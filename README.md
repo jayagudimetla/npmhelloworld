@@ -6,7 +6,9 @@
 ## Commands
 
 > npm install -g npmhelloworld
+
 > npm test
+
 > nww -n myName
 
 ## features

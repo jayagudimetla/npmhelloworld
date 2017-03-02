@@ -1,8 +1,8 @@
 {
   "name": "npmhelloworld",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "This is for npm test;",
-  "main": "index.js",
+  "main": "nhw",
   "scripts": {
     "test": "node ./node_modules/.bin/istanbul cover test.js",
     "coverage": "cat ./coverage/lcov.info | coveralls"
@@ -12,14 +12,16 @@
     "url": "https://github.com/jerryni/npmhelloworld.git"
   },
   "bin": {
-      "nhw": "index.js"
+    "nhw": "index.js"
   },
   "preferGlobal": true,
   "author": "jerryni <jerryni2014@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "coveralls": "^2.11.16",
-    "istanbul": "^0.4.5",
+    "istanbul": "^0.4.5"
+  },
+  "dependencies": {
     "shelljs": "^0.7.6",
     "yargs": "^6.6.0"
   }
