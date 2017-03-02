@@ -13,3 +13,9 @@ const argv = yargs
 // shell test
 // shell.cp('./license.md', 'test.txt')
 console.log('hello world', argv.name)
+
+module.exports = {
+    foo: function(){
+        console.log('foo')
+    }
+}
