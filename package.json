@@ -1,6 +1,6 @@
 {
   "name": "npmhelloworld",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This is for npm test;",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,16 @@
     "type": "git",
     "url": "https://github.com/jerryni/npmhelloworld.git"
   },
+  "bin": {
+      "nhw": "index.js"
+  },
+  "preferGlobal": true,
   "author": "jerryni <jerryni2014@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "coveralls": "^2.11.16",
-    "istanbul": "^0.4.5"
+    "istanbul": "^0.4.5",
+    "shelljs": "^0.7.6",
+    "yargs": "^6.6.0"
   }
 }
