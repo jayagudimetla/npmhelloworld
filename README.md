@@ -3,13 +3,19 @@
 [![npm version](https://img.shields.io/npm/v/npmhelloworld.svg)](https://www.npmjs.com/package/npmhelloworld)
 ![travis](https://travis-ci.org/jerryni/npmhelloworld.svg?branch=master)
 
-## Commands
+## Usage
 
 > npm install -g npmhelloworld
 
-> npm test
+> nhw -n myName
 
-> nww -n myName
+## Module System
+
+> var nhw = require('npmhelloworld');
+
+## Test
+
+> npm test
 
 ## features
 
