@@ -18,10 +18,13 @@
   "author": "jerryni <jerryni2014@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "chalk-log": "^1.2.0",
+    "config": "^1.25.1",
     "coveralls": "^2.11.16",
     "istanbul": "^0.4.5"
   },
   "dependencies": {
+    "opn": "^4.0.2",
     "shelljs": "^0.7.6",
     "yargs": "^6.6.0"
   }
