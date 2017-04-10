@@ -32,4 +32,4 @@ log.note(`host:${dbConfig.host}`)
 const opn = require('opn')
 
 // opn('http://kaola.com', {app: ['google chrome', '--incognito']});
-opn('http://kaola.com', {app: 'firefox'});
+opn('http://kaola.com', {app: 'firefox'})

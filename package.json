@@ -1,8 +1,8 @@
 {
   "name": "npmhelloworld",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "This is for npm test;",
-  "main": "nhw",
+  "main": "main.js",
   "scripts": {
     "test": "node ./node_modules/.bin/istanbul cover test.js",
     "coverage": "cat ./coverage/lcov.info | coveralls"
