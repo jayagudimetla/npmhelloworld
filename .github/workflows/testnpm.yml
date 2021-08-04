@@ -1,0 +1,49 @@
+name: Push NPM package to packages2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2 # Checks out the repository
+      
+      - name: Install depencies for npm package #This process is the prep work for the npm package build which takes care of installing the depencies for uploading the npm package
+        run: |
+           npm set _auth `echo -n "${{secrets.PACKAGES2_CRED_USR}}:${{secrets.PACKAGES2_CRED_KEY}}" | openssl enc -A -base64`
+           # npm set _auth ${{secrets.PACKAGES2_CRED_KEY}}
+           npm set registry https://packages2.aa.com/artifactory/api/npm/npm-public/
+           npm i
+
+      - name: Get Version Number
+        run: |
+          echo "BUILD_NUMBER=`node -p "require('./package.json').version"`" >> $GITHUB_ENV
+      
+      - name: Checkout Artifactory Actions #checkout existing action to push the npm package to packages.aa.com
+        uses: actions/checkout@v2
+        with:
+          repository: AAInternal/artifactory-actions
+          ref: npm_saas_poc
+          token: ${{ secrets.AAINTERNAL_READONLY_PAT }}
+          path: ./.github/actions/artifactory-actions
+
+      - name: publish npm package to Artifactory
+        uses: ./.github/actions/artifactory-actions/npm # Specifies the npm action
+        with:
+          username: ${{ secrets.PACKAGES2_CRED_USR }}
+          apikey: ${{ secrets.PACKAGES2_CRED_KEY }}
+          REPOSITORY_FQDN: "packages2.aa.com"
+
+
+#       - name: Promote NPM Package
+#         uses: ./.github/actions/artifactory-actions/promote
+#         with:
+#           username: ${{ secrets.PACKAGES2_CRED_USR }}
+#           apikey: ${{ secrets.PACKAGES2_CRED_KEY }}
+#           buildNumber: ${{ env.BUILD_NUMBER }}
+#           repository: AA-internal-npm
+
+
+
